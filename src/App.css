@@ -1,0 +1,252 @@
+#root {
+  min-height: 100vh;                       /* Establece mínima altura al 100% del viewport */
+  display: flex;                           /* Activa modelo flexbox para distribución */
+  flex-direction: column;                  /* Distribuye elementos en vertical */
+}
+
+main {
+  flex: 1;                                 /* Ocupa todo el espacio disponible */
+}
+
+/* =========================================
+   ESTILOS BASE - Aplicados a toda la app
+   ========================================= */
+/* Tipografías importadas de Google Fonts:
+   - Montserrat: Para textos generales y encabezados
+   - Nunito: Específica para VulcanoHome */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;                               /* Elimina espacios externos por defecto */
+  padding: 0;                              /* Elimina espacios internos por defecto */
+  box-sizing: border-box;                  /* Incluye bordes y padding en el tamaño total */
+  font-family: "Montserrat", sans-serif;   /* Establece fuente Montserrat en toda la app */
+}
+
+body {
+  height: 100vh;                           /* Ocupa todo el alto de la ventana */
+  overflow: hidden;                        /* Oculta barras de desplazamiento */
+  background: var(--color-white);          /* Fondo blanco en toda la página */
+}
+
+/* =========================================
+   VIDEO DE FONDO (Fullscreen)
+   Componente: VulcanoHome - Fondo de pantalla
+   ========================================= */
+.vh-background-video {
+  position: fixed;                         /* Fija el video independiente del scroll */
+  right: 0;                                /* Posiciona en la esquina derecha */
+  bottom: 0;                               /* Posiciona en la esquina inferior */
+  min-width: 100%;                         /* Asegura que cubra todo el ancho */
+  min-height: 100%;                        /* Asegura que cubra todo el alto */
+  width: auto;                             /* Ancho automático para mantener proporción */
+  height: auto;                            /* Alto automático para mantener proporción */
+  z-index: -100;                           /* Se ubica detrás de todos los elementos */
+  object-fit: cover;                       /* Rellena el espacio sin deformar la imagen */
+}
+
+/* =========================================
+   COMPONENTE: VULCANO HOME
+   Descripción: Página principal con navbar, hero section y botones
+   Clases con prefijo: vh- (Vulcano Home)
+   ========================================= */
+
+/* --- Contenedor Principal ---
+    Clase: .vh-container
+    Función: Contenedor raíz del componente VulcanoHome */
+.vh-container {
+  font-family: 'Nunito', sans-serif;       /* Cambia fuente a Nunito específica */
+  min-height: 100vh;                       /* Ocupa mínimo 100% del viewport */
+  display: flex;                           /* Activa modelo flexbox */
+  flex-direction: column;                  /* Distribuye contenido en vertical */
+  position: relative;                      /* Habilita posicionamiento relativo */
+  z-index: 1;                              /* Se ubica por encima del fondo */
+  background-color: transparent;           /* Fondo transparente para ver el video de fondo */
+}
+
+/* --- Navbar (Barra de navegación) ---
+    Clases: .vh-navbar, .vh-nav-content, .vh-logo, .vh-lang
+    Función: Encabezado con logo y selector de idioma */
+.vh-navbar {
+  height: 70px;                            /* Establece altura fija de 70px */
+  border-bottom: 2px solid var(--color-blush);  /* Añade borde inferior rosa */
+  display: flex;                           /* Activa modelo flexbox */
+  justify-content: center;                 /* Centra contenido horizontalmente */
+  align-items: center;                     /* Centra contenido verticalmente */
+  padding: 0 20px;                         /* Espaciado lateral de 20px */
+  background: var(--color-dark);           /* Fondo oscuro */
+}
+
+.vh-nav-content {
+  width: 100%;                             /* Ocupa todo el ancho disponible */
+  max-width: 1000px;                       /* Limita ancho máximo a 1000px */
+  display: flex;                           /* Activa modelo flexbox */
+  justify-content: space-between;          /* Distribuye logo e idioma a los extremos */
+  align-items: center;                     /* Centra verticalmente los elementos */
+}
+
+.vh-logo {
+  font-size: 32px;                         /* Define el tamaño del texto VULCANO APP */
+  font-weight: 800;                        /* Hace el texto más grueso/bold */
+  color: var(--color-white);               /* Color blanco del texto */
+  letter-spacing: 1px;                     /* Espaciado entre letras */
+  display: flex;                           /* Alinea el icono y texto en fila horizontal */
+  align-items: center;                     /* Centra verticalmente el icono y texto */
+  gap: 12px;                               /* Espacio entre el icono y el texto */
+}
+
+.vh-logo-icon {
+  height: 100px;                           /* Aumenta la altura del icono a 100px */
+  width: 100px;                            /* Aumenta el ancho del icono a 100px */
+  object-fit: contain;                     /* Mantiene la proporción sin distorsionar la imagen */
+}
+
+.vh-lang {
+  color: var(--color-white);               /* Texto blanco */
+  font-weight: 700;                        /* Texto más grueso/bold */
+  font-size: 14px;                         /* Tamaño de fuente más pequeño que el logo */
+}
+
+/* --- Hero Section (Sección principal) ---
+    Clases: .vh-hero, .vh-hero-content
+    Función: Área central con video, título y botones */
+.vh-hero {
+  flex: 1;                                 /* Ocupa todo el espacio disponible */
+  display: flex;                           /* Activa modelo flexbox */
+  justify-content: center;                 /* Centra contenido horizontalmente */
+  align-items: center;                     /* Centra contenido verticalmente */
+  padding: 40px 20px;                      /* Espaciado interno de 40px superior/inferior y 20px lateral */
+}
+
+.vh-hero-content {
+  display: flex;                           /* Activa modelo flexbox */
+  flex-wrap: wrap;                         /* Permite que elementos se ajusten a más filas */
+  align-items: center;                     /* Centra verticalmente los elementos */
+  justify-content: center;                 /* Centra horizontalmente los elementos */
+  gap: 40px;                               /* Reduce espaciado a 40px entre el óvalo y el texto */
+  max-width: 1000px;                       /* Limita ancho máximo a 1000px */
+  transition: gap 0.3s ease;               /* Anima cambios en el espaciado durante 0.3s */
+}
+
+/* --- Círculo Lava (Avatar/Mascota) ---
+    Clases: .vh-lava-circle, .vh-mascot
+    Función: Contenedor circular con video del mascota */
+.vh-lava-circle {
+  width: 420px;                            /* Ancho de 420px para óvalo horizontal */
+  height: 280px;                           /* Alto de 280px para crear forma ovalada */
+  background-color: var(--color-cream);    /* Fondo crema claro */
+  border-radius: 50%;                      /* Crea forma circular/ovalada */
+  display: flex;                           /* Activa modelo flexbox */
+  justify-content: center;                 /* Centra contenido horizontalmente */
+  align-items: center;                     /* Centra contenido verticalmente */
+  border: 4px dashed var(--color-dark);    /* Borde punteado oscuro */
+  overflow: hidden;                        /* Oculta contenido que sobresale del círculo */
+  transition: all 0.3s ease;               /* Anima cambios de tamaño suavemente */
+}
+
+.vh-mascot {
+  width: 100%;                             /* Ocupa todo el ancho del contenedor circular */
+  height: 100%;                            /* Ocupa todo el alto del contenedor circular */
+  object-fit: cover;                       /* Rellena el círculo sin deformar el video */
+}
+
+/* --- Contenido de texto ---
+    Clases: .vh-text-side, .vh-title
+    Función: Sección con encabezado principal */
+.vh-text-side {
+  max-width: 480px;                        /* Limita ancho máximo a 480px */
+  text-align: center;                      /* Centra el texto */
+}
+
+.vh-title {
+  font-size: 30px;                         /* Tamaño de fuente grande para título */
+  font-weight: 800;                        /* Texto muy grueso/bold */
+  color: var(--color-dark);                /* Color oscuro */
+  line-height: 1.2;                        /* Espaciado entre líneas */
+  margin-bottom: 35px;                     /* Espaciado inferior entre título y botones */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);  /* Sombra blanca suave al título */
+  transition: font-size 0.3s ease;         /* Anima cambios de tamaño suavemente */
+}
+
+.vh-button-group {
+  display: flex;                           /* Activa modelo flexbox */
+  flex-direction: column;                  /* Apila botones en vertical */
+  gap: 15px;                               /* Espaciado de 15px entre botones */
+  max-width: 320px;                        /* Limita ancho máximo a 320px */
+  margin: 0 auto;                          /* Centra el grupo de botones */
+}
+
+/* --- Grupo de Botones ---
+    Clases: .vh-button-group, .vh-btn-primary, .vh-btn-secondary
+    Función: Botones de "Empieza Ahora" y "Ya tengo cuenta" */
+.vh-btn-primary {
+  padding: 12px 20px;                      /* Espaciado interno del botón */
+  border-radius: 16px;                     /* Esquinas redondeadas */
+  font-weight: 800;                        /* Texto muy grueso/bold */
+  font-size: 15px;                         /* Tamaño de fuente del botón */
+  border: none;                            /* Sin borde */
+  cursor: pointer;                         /* Cursor de mano al pasar sobre el botón */
+  background-color: var(--color-dark);     /* Fondo oscuro */
+  color: var(--color-white);               /* Texto blanco */
+  box-shadow: 0 4px 0 var(--color-dark);   /* Sombra inferior para efecto 3D */
+  transition: 0.3s ease;                   /* Anima cambios suavemente */
+}
+
+.vh-btn-primary:hover {
+  background-color: var(--color-mid);      /* Cambia fondo al pasar el cursor (color intermedio) */
+}
+
+.vh-btn-secondary {
+  padding: 12px 20px;                      /* Espaciado interno del botón */
+  border-radius: 16px;                     /* Esquinas redondeadas */
+  font-weight: 800;                        /* Texto muy grueso/bold */
+  font-size: 15px;                         /* Tamaño de fuente del botón */
+  cursor: pointer;                         /* Cursor de mano al pasar sobre el botón */
+  background-color: var(--color-white);    /* Fondo blanco */
+  color: var(--color-dark);                /* Texto oscuro */
+  border: 2px solid var(--color-blush);    /* Borde rosa */
+  box-shadow: 0 4px 0 var(--color-blush);  /* Sombra inferior rosa para efecto 3D */
+  transition: 0.3s ease;                   /* Anima cambios suavemente */
+}
+
+/* =========================================
+   MEDIA QUERIES - Responsividad
+   Breakpoints:
+   - 1024px: Tablets grandes
+   - 768px: Móviles y tablets pequeños
+   ========================================= */
+
+/* BREAKPOINT 1: Tablets (max-width: 1024px)
+   Ajustes: Reduce tamaño del círculo y espacios */
+@media (max-width: 1024px) {
+  .vh-lava-circle {
+    width: 280px;                          /* Reduce ancho a 280px en tablets */
+    height: 200px;                         /* Reduce alto a 200px en tablets mantiene óvalo */
+  }
+  .vh-hero-content {
+    gap: 30px;                             /* Reduce espaciado a 30px entre elementos */
+  }
+}
+
+/* BREAKPOINT 2: Móviles (max-width: 768px)
+   Ajustes: Layout vertical, fuentes más pequeñas, menos espacios */
+@media (max-width: 768px) {
+  .vh-lava-circle {
+    width: 200px;                          /* Reduce ancho a 200px en móviles */
+    height: 140px;                         /* Reduce alto a 140px en móviles mantiene óvalo */
+    border-width: 3px;                     /* Reduce grosor del borde a 3px */
+  }
+  .vh-hero-content {
+    gap: 25px;                             /* Reduce espaciado a 25px entre elementos */
+    flex-direction: column;                /* Apila elementos en vertical */
+  }
+  .vh-title {
+    font-size: 24px;                       /* Reduce tamaño de fuente a 24px */
+    margin-bottom: 25px;                   /* Reduce espaciado inferior del título */
+  }
+  .vh-footer-links {
+    gap: 20px;                             /* Reduce espaciado entre enlaces */
+    font-size: 12px;                       /* Reduce tamaño de fuente a 12px */
+  }
+}
