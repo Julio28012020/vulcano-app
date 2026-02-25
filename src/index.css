@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* 🎨 Paleta de Colores */
+:root {
+  --color-dark: #472825;   /* Navbar, texto, botones primarios, footer */
+  --color-mid: #96786F;    /* Texto secundario, nav links */
+  --color-blush: #D3ABB0;  /* Bordes, tags, pildoras */
+  --color-cream: #FDE4BC;  /* Botones CTA, fondos hero */
+  --color-white: #FFF4E2;  /* Fondo general, tarjetas */
+}
