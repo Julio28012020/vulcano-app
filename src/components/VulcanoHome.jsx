@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import VulcanoFooter from './VulcanoFooter';
+
 const logoVideo = '/videos/Logo.mp4';
 const vulcanoIcon = '/Icons/Vulcano_Icon-removebg-preview.png';
 
@@ -34,7 +36,8 @@ const VulcanoHome = () => {
           </div>
         </div>
       </main>
-
+      
+      <VulcanoFooter />
 
     </div>
   );

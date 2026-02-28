@@ -1,3 +1,12 @@
+/* =========================================
+   ESTILOS BASE - Aplicados a toda la app
+   ========================================= */
+/* Tipografías importadas de Google Fonts:
+   - Montserrat: Para textos generales y encabezados
+   - Nunito: Específica para VulcanoHome */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
 #root {
   min-height: 100vh;                       /* Establece mínima altura al 100% del viewport */
   display: flex;                           /* Activa modelo flexbox para distribución */
@@ -8,15 +17,6 @@ main {
   flex: 1;                                 /* Ocupa todo el espacio disponible */
 }
 
-/* =========================================
-   ESTILOS BASE - Aplicados a toda la app
-   ========================================= */
-/* Tipografías importadas de Google Fonts:
-   - Montserrat: Para textos generales y encabezados
-   - Nunito: Específica para VulcanoHome */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
-
 * {
   margin: 0;                               /* Elimina espacios externos por defecto */
   padding: 0;                              /* Elimina espacios internos por defecto */
@@ -25,8 +25,8 @@ main {
 }
 
 body {
-  height: 100vh;                           /* Ocupa todo el alto de la ventana */
-  overflow: hidden;                        /* Oculta barras de desplazamiento */
+  min-height: 100vh;                       /* Ocupa mínimo todo el alto de la ventana */
+  overflow: auto;                          /* Permite el scroll para ver el footer */
   background: var(--color-white);          /* Fondo blanco en toda la página */
 }
 

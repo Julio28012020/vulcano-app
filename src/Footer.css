@@ -1,0 +1,275 @@
+/* Fondo oscuro y fuente del footer completo */
+.vf-footer {
+  background-color: var(--color-dark);
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+}
+
+/* Línea decorativa con degradado rosado en la parte superior */
+.vf-top-border {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-blush) 20%,
+    var(--color-mid) 50%,
+    var(--color-blush) 80%,
+    transparent 100%
+  );
+}
+
+/* Grid de 4 columnas centrado con ancho máximo */
+.vf-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 52px 32px 40px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+  gap: 48px;
+}
+
+
+
+/* --- MARCA --- */
+
+/* Apila el logo y la descripción en vertical */
+.vf-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Alinea el icono y el texto del logo en una fila */
+.vf-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Tamaño del icono PNG del logo */
+.vf-logo-icon {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}
+
+/* Texto VULCANO APP en blanco y negrita */
+.vf-logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: 1.5px;
+}
+
+/* Párrafo descriptivo debajo del logo */
+.vf-brand-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--color-blush);
+  max-width: 260px;
+}
+
+
+
+/* --- TÍTULO DE CADA COLUMNA --- */
+
+/* Título en mayúsculas con línea inferior para cada sección */
+.vf-col-title {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-cream);
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(211, 171, 176, 0.25);
+}
+
+
+
+/* --- NAVEGACIÓN --- */
+
+/* Lista de links apilados en vertical sin puntos */
+.vf-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilo de cada link de navegación */
+.vf-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-blush);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+/* Al pasar el mouse el link se pone crema y se mueve a la derecha */
+.vf-nav-link:hover {
+  color: var(--color-cream);
+  gap: 12px;
+}
+
+/* Triángulo decorativo antes de cada link */
+.vf-link-arrow {
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+
+
+/* --- TECNOLOGÍAS --- */
+
+/* Apila las pastillitas en vertical */
+.vf-tech-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* Etiqueta redondeada para cada tecnología */
+.vf-tech-pill {
+  background-color: rgba(253, 228, 188, 0.1);
+  border: 1px solid var(--color-mid);
+  color: var(--color-cream);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 11px;
+  border-radius: 20px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+/* Al pasar el mouse cambia a fondo crema con texto oscuro */
+.vf-tech-pill:hover {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  border-color: var(--color-cream);
+}
+
+
+
+/* ---------- EQUIPO ---------- */
+
+/* Lista de integrantes apilados en vertical sin puntos */
+.vf-team-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Contenedor de cada fila de integrante */
+.vf-team-member {
+  display: flex;
+}
+
+/* Alinea el avatar y el nombre en una fila */
+.vf-member-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+/* Al pasar el mouse el integrante se mueve 4px a la derecha */
+.vf-member-link:hover {
+  transform: translateX(4px);
+}
+
+/* Círculo con la inicial del nombre de cada integrante */
+.vf-member-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-mid);
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-blush);
+  transition: background-color 0.2s ease;
+}
+
+/* Al pasar el mouse el círculo cambia a color rosado */
+.vf-member-link:hover .vf-member-avatar {
+  background-color: var(--color-blush);
+  color: var(--color-dark);
+}
+
+/* Nombre completo del integrante en blanco y negrita */
+.vf-member-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.2;
+  display: block;
+}
+
+/* Cargo del integrante en color intermedio */
+.vf-member-role {
+  font-size: 11px;
+  color: var(--color-mid);
+  display: block;
+}
+
+
+
+/* --- BARRA INFERIOR --- */
+
+/* Franja inferior con el copyright y el nombre del equipo */
+.vf-bottom-bar {
+  border-top: 1px solid rgba(211, 171, 176, 0.2);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--color-mid);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Punto rosado que separa los textos de la barra inferior */
+.vf-bottom-divider {
+  color: var(--color-blush);
+  opacity: 0.5;
+}
+
+/* Agranda el emoji 🌋 del nombre del equipo */
+.vf-bottom-bar span:last-child {
+  font-size: 18px;
+}
+
+
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablets: reduce a 2 columnas */
+@media (max-width: 1024px) {
+  .vf-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* Móviles: reduce a 1 columna apilando todo en vertical */
+@media (max-width: 768px) {
+  .vf-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 24px 32px;
+  }
+}
